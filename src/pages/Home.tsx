@@ -1,4 +1,5 @@
 import { Box, Typography, useTheme } from "@mui/material";
+import Header from "../layout/Header";
 
 export const Home = () => {
   
@@ -6,7 +7,8 @@ export const Home = () => {
 
   return (
     <Box minHeight="100vh">
-      <Typography color={theme.palette.primary.contrastText}>Página de Home</Typography>
+      <Header titulo="Home"/>
+      <Typography color={theme.palette.primary.contrastText}></Typography>
     </Box>
   );
 };

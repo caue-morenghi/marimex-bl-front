@@ -1,8 +1,10 @@
 import {
   Icon,
+  IconButton,
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Tooltip,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -15,9 +17,9 @@ type IListItemLinkProps = {
 
 export const ListItemLink = ({
   icon,
-  label,
   onClick,
   to,
+  label
 }: IListItemLinkProps) => {
   const navigate = useNavigate();
 
@@ -27,11 +29,10 @@ export const ListItemLink = ({
   };
 
   return (
-    <ListItemButton onClick={handleClick}>
-      <ListItemIcon>
-        <Icon>{icon}</Icon>
-      </ListItemIcon>
-      <ListItemText primary={label} />
-    </ListItemButton>
+    <Tooltip title={label} onClick={handleClick} >
+      <IconButton sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <Icon sx={{ fontSize: '40px' }}>{icon}</Icon>
+      </IconButton>
+    </Tooltip>
   );
 };
